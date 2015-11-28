@@ -13,7 +13,13 @@ public class MainConsole {
         new MainConsole().run(br);
     }
 
-    public String run(BufferedReader br)throws Exception{
+    /**
+     *
+     * @param bufferedReader Buffered reader object for input
+     * @return A json representation of the results
+     * @throws Exception
+     */
+    public String run(BufferedReader bufferedReader)throws Exception{
         ConsoleAppService consoleAppService = new ConsoleAppService();
         String response = null;
         try {
@@ -22,19 +28,19 @@ public class MainConsole {
 
 
             System.out.println("Enter unit price for Avocado:...");
-            double avocadoUnitPrice = convertToNumber(br.readLine());
+            double avocadoUnitPrice = convertInputToNumber(bufferedReader.readLine());
 
             System.out.println("\nEnter unit price for Pear:...");
-            double pearUnitPrice = convertToNumber(br.readLine());
+            double pearUnitPrice = convertInputToNumber(bufferedReader.readLine());
 
             System.out.println("\nEnter unit price for Kiwi:...");
-            double kiwiUnitPrice = convertToNumber(br.readLine());
+            double kiwiUnitPrice = convertInputToNumber(bufferedReader.readLine());
 
             System.out.println("\nEnter unit price for Mango:...");
-            double mangoUnitPrice = convertToNumber(br.readLine());
+            double mangoUnitPrice = convertInputToNumber(bufferedReader.readLine());
 
             System.out.println("\nPress r and  Enter to view results");
-            String results = br.readLine();
+            String results = bufferedReader.readLine();
 
 
             if ("r".equals(results)){
@@ -54,7 +60,12 @@ public class MainConsole {
         return response;
     }
 
-    private double convertToNumber(String unitPrice){
+    /**
+     *
+     * @param unitPrice converts the console input to a number
+     * @return a double
+     */
+    private double convertInputToNumber(String unitPrice){
 
         try{
             return  Double.valueOf(unitPrice);

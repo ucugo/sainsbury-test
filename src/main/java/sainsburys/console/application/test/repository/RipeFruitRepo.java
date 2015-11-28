@@ -6,21 +6,37 @@ import sainsburys.console.application.test.model.Item;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * A repo that generates static response object for console app
+ */
 public class RipeFruitRepo {
-
+    /**
+     *
+     * @param avocadoUnitPrice Avocado unit price
+     * @param pearUnitPrice Pear unit price
+     * @param kiwiUnitPrice unit price for kiwi
+     * @param mangoUnitPrice unit price for mango
+     * @return A ConsoleResponse object
+     */
     public ConsoleResponse getResponse(double avocadoUnitPrice,
                                        double pearUnitPrice,
                                        double kiwiUnitPrice,
                                        double mangoUnitPrice) {
 
-       ConsoleResponse response = new ConsoleResponse
+       return new ConsoleResponse
                 .Builder()
                 .withItems(getItems(avocadoUnitPrice, pearUnitPrice, kiwiUnitPrice, mangoUnitPrice))
                 .build();
-
-        return response;
     }
 
+    /**
+     *
+     * @param avocadoUnitPrice Avocado unit price
+     * @param pearUnitPrice Pear unit price
+     * @param kiwiUnitPrice unit price for kiwi
+     * @param mangoUnitPrice unit price for mangoe
+     * @return A list of Items
+     */
     private List<Item> getItems(double avocadoUnitPrice,
                                 double pearUnitPrice,
                                 double kiwiUnitPrice,
@@ -43,6 +59,14 @@ public class RipeFruitRepo {
         return Arrays.asList(items);
     }
 
+    /**
+     *
+     * @param title Items title
+     * @param unitPrice Items unit price
+     * @param size Html size
+     * @param description Item description
+     * @return An item
+     */
     private Item getItem(String title, double unitPrice, String size, String description ) {
 
         return new Item

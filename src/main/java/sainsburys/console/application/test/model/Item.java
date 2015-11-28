@@ -5,6 +5,9 @@ import sainsburys.console.application.test.error.BuilderError;
 
 import java.text.DecimalFormat;
 
+/**
+ * pojo for Item object
+ */
 public class Item {
 
     private final String title;
@@ -12,6 +15,10 @@ public class Item {
     private final String unitPrice;
     private final String description;
 
+    /**
+     *
+     * @param builder accepts a wrapper for Item class
+     */
     public Item(Builder builder){
         this.validate(builder);
         this.title = builder.title;
@@ -56,6 +63,9 @@ public class Item {
         }
     }
 
+    /**
+     * Wrapper class for building an Item object
+     */
     public static class Builder {
         private String title;
         private String unitPrice;

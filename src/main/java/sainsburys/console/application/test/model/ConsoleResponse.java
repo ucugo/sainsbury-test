@@ -5,12 +5,19 @@ import sainsburys.console.application.test.error.BuilderError;
 import java.text.DecimalFormat;
 import java.util.List;
 
+/**
+ * pojo class for cosmos response
+ */
 public class ConsoleResponse{
 
     private List<Item> results;
     private String total;
 
-
+    /**
+     *
+     * @param builder constructor accepts a builder class and validates before
+     *                setting the response object
+     */
     private ConsoleResponse(Builder builder){
         validate(builder);
         this.total = builder.total;
@@ -38,6 +45,9 @@ public class ConsoleResponse{
         }
     }
 
+    /**
+     * Wrapper class for Console response
+     */
     public static class Builder {
         private String total;
         private List<Item>items;
