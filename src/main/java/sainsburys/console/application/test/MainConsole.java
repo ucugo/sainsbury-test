@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 public class MainConsole {
 
     public static void main(String[] aArgs) throws Exception{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in,  "ISO-8859-1"));
         new MainConsole().run(br);
     }
 
